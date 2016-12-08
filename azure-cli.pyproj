@@ -12,7 +12,7 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId>MSBuild|{54f4b6dc-0859-46dc-99bb-b275c9d0aca3}|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
     <CommandLineArguments>
     </CommandLineArguments>
@@ -140,6 +140,25 @@
     <Compile Include="command_modules\azure-cli-context\azure\cli\command_modules\context\_params.py" />
     <Compile Include="command_modules\azure-cli-context\azure\cli\command_modules\context\__init__.py" />
     <Compile Include="command_modules\azure-cli-context\setup.py" />
+    <Compile Include="command_modules\azure-cli-cookiecutter\azure\cli\command_modules\cookiecutter\commands.py" />
+    <Compile Include="command_modules\azure-cli-cookiecutter\azure\cli\command_modules\cookiecutter\custom.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="command_modules\azure-cli-cookiecutter\azure\cli\command_modules\cookiecutter\_help.py" />
+    <Compile Include="command_modules\azure-cli-cookiecutter\azure\cli\command_modules\cookiecutter\_params.py" />
+    <Compile Include="command_modules\azure-cli-cookiecutter\azure\cli\command_modules\cookiecutter\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="command_modules\azure-cli-cookiecutter\azure\cli\command_modules\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="command_modules\azure-cli-cookiecutter\azure\cli\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="command_modules\azure-cli-cookiecutter\azure\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="command_modules\azure-cli-cookiecutter\setup.py" />
     <Compile Include="command_modules\azure-cli-feedback\azure\cli\command_modules\feedback\commands.py" />
     <Compile Include="command_modules\azure-cli-feedback\azure\cli\command_modules\feedback\custom.py" />
     <Compile Include="command_modules\azure-cli-feedback\azure\cli\command_modules\feedback\_help.py">
@@ -750,6 +769,10 @@
     <Folder Include="command_modules\azure-cli-context\azure\cli\" />
     <Folder Include="command_modules\azure-cli-context\azure\cli\command_modules\" />
     <Folder Include="command_modules\azure-cli-context\azure\cli\command_modules\context\" />
+    <Folder Include="command_modules\azure-cli-cookiecutter\azure\" />
+    <Folder Include="command_modules\azure-cli-cookiecutter\azure\cli\" />
+    <Folder Include="command_modules\azure-cli-cookiecutter\azure\cli\command_modules\" />
+    <Folder Include="command_modules\azure-cli-cookiecutter\azure\cli\command_modules\cookiecutter\" />
     <Folder Include="command_modules\azure-cli-feedback\" />
     <Folder Include="command_modules\azure-cli-feedback\azure\" />
     <Folder Include="command_modules\azure-cli-feedback\azure\cli\" />
@@ -888,6 +911,7 @@
     <Folder Include="command_modules\azure-cli-vm\azure\cli\command_modules\vm\mgmt_vm\nested_templates\" />
     <Folder Include="command_modules\azure-cli-vm\azure\cli\command_modules\vm\mgmt_avail_set\" />
     <Folder Include="command_modules\azure-cli-vm\azure\cli\command_modules\vm\tests\" />
+    <Folder Include="command_modules\azure-cli-cookiecutter\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="azure-cli-core\setup.cfg" />
@@ -912,6 +936,9 @@
     <Content Include="command_modules\azure-cli-component\requirements.txt" />
     <Content Include="command_modules\azure-cli-configure\requirements.txt" />
     <Content Include="command_modules\azure-cli-container\requirements.txt" />
+    <Content Include="command_modules\azure-cli-cookiecutter\README.rst" />
+    <Content Include="command_modules\azure-cli-cookiecutter\requirements.txt" />
+    <Content Include="command_modules\azure-cli-cookiecutter\setup.cfg" />
     <Content Include="command_modules\azure-cli-iot\azure\cli\command_modules\iot\mgmt_iot_hub_device\swagger_iot_hub_device_identity.json" />
     <Content Include="command_modules\azure-cli-iot\requirements.txt" />
     <Content Include="command_modules\azure-cli-keyvault\requirements.txt" />
@@ -1003,16 +1030,14 @@
     <Content Include="command_modules\azure-cli-vm\requirements.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="..\env\">
-      <Id>{54f4b6dc-0859-46dc-99bb-b275c9d0aca3}</Id>
-      <BaseInterpreter>Global|PythonCore|3.5-32|x86</BaseInterpreter>
+    <Interpreter Include="env\">
+      <Id>env</Id>
       <Version>3.5</Version>
-      <Description>env (Python 3.5)</Description>
+      <Description>env (Python 3.5 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <LibraryPath>Lib\</LibraryPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X86</Architecture>
+      <Architecture>X64</Architecture>
     </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
